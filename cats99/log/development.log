@@ -638,3 +638,31 @@ Processing by CatsController#show as HTML
 Completed 200 OK in 30ms (Views: 12.7ms | ActiveRecord: 3.3ms)
 
 
+Started GET "/cats" for ::1 at 2021-09-17 17:26:03 -0400
+  [1m[35m (30.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hienthu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (194.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:4
+  Rendered cats/index.html.erb within layouts/application (750.9ms)
+Completed 200 OK in 2760ms (Views: 2056.1ms | ActiveRecord: 664.4ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-09-17 17:26:17 -0400
+Processing by CatsController#new as */*
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 762ms (Views: 760.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-09-17 17:27:07 -0400
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for ::1 at 2021-09-17 17:27:29 -0400
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"huhu", "sex"=>"F", "color"=>"white", "birth_date"=>"2021-05-03", "description"=>"        im a real cat"}}

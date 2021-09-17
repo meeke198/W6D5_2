@@ -5,7 +5,7 @@
     </label>
     <br><br>
     <label for="sex">Gender:
-        <input id="male" type="radio" name="cat[sex]" value="M">
+        <input id="male" type="radio" name="cat[sex]" value="M" <% @cat.sex.is_equal "M" ? checked :  "" %>>
         <label for="male">Male</label>
         <input id="female" type="radio" name="cat[sex]" value="F">
         <label for="female">Female</label><br>
