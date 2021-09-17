@@ -582,3 +582,59 @@ Completed 200 OK in 868ms (Views: 567.0ms | ActiveRecord: 27.3ms)
 
 
   [1m[36mCat Load (7.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  [1m[36mCat Load (4.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+Started GET "/cats/new" for ::1 at 2021-09-17 17:10:47 -0400
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/zkural1/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#new as */*
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 174ms (Views: 148.2ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-09-17 17:11:58 -0400
+Processing by CatsController#new as */*
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 65ms (Views: 28.2ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-09-17 17:15:19 -0400
+Processing by CatsController#new as */*
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 14831ms (Views: 219.0ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-09-17 17:22:10 -0400
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/zkural1/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 157ms (Views: 121.6ms | ActiveRecord: 25.5ms)
+
+
+Started POST "/cats" for ::1 at 2021-09-17 17:22:27 -0400
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Till", "sex"=>"M", "color"=>"black", "birth_date"=>"2000-03-02", "description"=>"good cat        "}}
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:21
+  [1m[36mCat Create (30.2ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2000-03-02"], ["color", "black"], ["name", "Till"], ["sex", "M"], ["description", "good cat        "], ["created_at", "2021-09-17 21:23:02.041372"], ["updated_at", "2021-09-17 21:23:02.041372"]]
+  ↳ app/controllers/cats_controller.rb:21
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:21
+Redirected to http://localhost:3000/cats/5
+Completed 302 Found in 34988ms (ActiveRecord: 35.7ms)
+
+
+Started GET "/cats/5" for ::1 at 2021-09-17 17:23:02 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCat Load (2.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 12.7ms | ActiveRecord: 3.3ms)
+
+

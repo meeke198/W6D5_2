@@ -1,6 +1,7 @@
-<form action="<%= cats_url %>" method="POST">
+<form action="<%= cat_url(@cat) %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
     <label for="name">Cat Name:
-        <input id="name" type="text" name="cat[name]">
+        <input id="name" type="text" name="cat[name]" value="<%= @cat.name %>">
     </label>
     <br><br>
     <label for="sex">Gender:
