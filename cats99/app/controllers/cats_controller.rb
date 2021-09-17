@@ -7,14 +7,16 @@ class CatsController < ApplicationController
 
     def show 
         @cat = Cat.find(params[:id])
+        render :show
     end
 
     def new
-        @cat = Cat.new(cat_params)
+        @cat = Cat.new
         render :new 
     end
 
     def create
+        debugger
         @cat = Cat.new(cat_params)
         if @cat.save
             redirect_to cat_url(@cat)

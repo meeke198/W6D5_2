@@ -581,3 +581,4 @@ Processing by CatsController#show as */*
 Completed 200 OK in 868ms (Views: 567.0ms | ActiveRecord: 27.3ms)
 
 
+  [1m[36mCat Load (7.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
